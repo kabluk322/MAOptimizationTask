@@ -6,9 +6,11 @@ using namespace std;
 
 bool isPrimeBase(int n)
 {
+    int a = sqrt(n);
     if (n < 2) return false;
     if (n == 2) return true;
-    for (int i = 3; i < n; i++)
+    if (n % 2 == 0) return false;
+    for (int i = 3; i < a; i += 2)
         if (n % i == 0) return false;
     return true;
 }
